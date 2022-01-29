@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-final class BeerByFoodGetController extends  AbstractController
+final class BeerDetailsGetController extends  AbstractController
 {
     private $logger;
 
@@ -20,10 +20,10 @@ final class BeerByFoodGetController extends  AbstractController
     }
 
     /**
-     * @Route("/beer_by_food/{food}",  methods={"GET"}, requirements={"food"="\w+"}), name="beer_by_food_get")
+     * @Route("/beers/{name}",  methods={"GET"}, requirements={"food"="\w+"}), name="beer_by_name")
      */
-    public function list(Request $request, $food):Response{
-        $this->logger->info(sprintf('BeerByFood Called with %s', $food));
+    public function show(Request $request, $name):Response{
+        $this->logger->info(sprintf('BeerByName Called with %s', name));
         return new JsonResponse(
             [
                 'beer-details' => 'ok',

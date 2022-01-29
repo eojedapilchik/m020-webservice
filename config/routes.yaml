@@ -8,5 +8,5 @@ health-check_get:
 
 #beer-by-food_get:
 #  path: /beer-by-food
-#  controller:  App\Controller\BeerByFoodGetController
+#  controller:  App\Controller\BeerListByFoodGetController
 #  methods: [GET]
