@@ -6,7 +6,7 @@ health-check_get:
   controller:  App\Controller\HealthCheckGetController
   methods: [GET]
 
-beer-by-food_get:
-  path: /beer-by-food
-  controller:  App\Controller\BeerByFoodGetController
-  methods: [GET]
+#beer-by-food_get:
+#  path: /beer-by-food
+#  controller:  App\Controller\BeerByFoodGetController
+#  methods: [GET]

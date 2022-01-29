@@ -21,7 +21,7 @@ final class HealthCheckGetController extends  AbstractController
         $this->logger->info('HealthCheck called');
         return new JsonResponse(
             [
-                'backend-status1' => 'ok'
+                'backend-status' => 'ok'
             ]
         );
 
