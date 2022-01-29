@@ -28,8 +28,19 @@ class GetBeerByFoodName
         }
 
         $content = $response->getContent();
+        $json = json_decode($content, true);
+        return array_map([$this, 'beerToDto'], $json);
+        //return json_decode($content, true);
 
-        return json_decode($content, true);
+    }
+
+    private function beerToDto($beer)
+    {
+         return new \App\Dto\GetBeerByFoodName(
+            $beer['id'],
+            $beer['name'],
+            $beer['description']
+        );
 
     }
 }
