@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Api;
 
 use Psr\Log\LoggerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 
-final class BeerListByFoodGetController extends  AbstractController
+final class BeerListByFoodGetController extends  AbstractFOSRestController
 {
     private $logger;
 

@@ -1,0 +1,8 @@
+App\Entity\Beer:
+  attributes:
+    id:
+      groups: ['beer']
+    name:
+      groups: ['beer']
+    description:
+      groups: ['beer']

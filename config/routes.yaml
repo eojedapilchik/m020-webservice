@@ -3,7 +3,7 @@
 #    controller: App\Controller\DefaultController::index
 health-check_get:
   path: /health-check
-  controller:  App\Controller\HealthCheckGetController
+  controller:  App\Controller\Api\HealthCheckGetController
   methods: [GET]
 
 #beer-by-food_get:
