@@ -2,21 +2,20 @@
 
 namespace App\Dto;
 
-class GetBeerByFoodName
+class GetBeerDTO
 {
     private $name;private $id;
     private $description;
 
     public function __construct(
-        string $name,
         string $id,
+        string $name,
         string $description
     )
     {
-        $this->name = $name;
         $this->id = $id;
+        $this->name = $name;
         $this->description = $description;
-
     }
 
     /**

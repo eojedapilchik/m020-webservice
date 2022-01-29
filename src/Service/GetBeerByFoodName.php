@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Dto\GetBeerDTO;
 use App\Repository\HttpClientInterface;
 
 class GetBeerByFoodName
@@ -34,9 +35,9 @@ class GetBeerByFoodName
 
     }
 
-    private function beerToDto($beer)
+    private function beerToDto(array $beer)
     {
-         return new \App\Dto\GetBeerByFoodName(
+         return new GetBeerDTO(
             $beer['id'],
             $beer['name'],
             $beer['description']

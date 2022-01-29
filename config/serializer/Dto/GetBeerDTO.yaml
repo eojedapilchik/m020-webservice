@@ -1,0 +1,8 @@
+App\Dto\GetBeerDTO:
+  attributes:
+    id:
+      groups: ['beer_list_response']
+    name:
+      groups: ['beer_list_response']
+    description:
+      groups: ['beer_list_response']

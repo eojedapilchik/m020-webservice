@@ -22,7 +22,7 @@ final class BeerListByFoodGetController extends  AbstractFOSRestController
 
     /**
      * @Rest\Get(path="/beers")
-     * @Rest\View(serializerGroups={"beer"}, serializerEnableMaxDepthChecks=true)
+     * @Rest\View(serializerGroups={"beer_list_response"}, serializerEnableMaxDepthChecks=true)
      */
     public function list(Request $request, GetBeerByFoodName $getBeerByFoodName)
     {
