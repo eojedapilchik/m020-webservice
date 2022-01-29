@@ -18,10 +18,10 @@ final class HealthCheckGetController extends  AbstractController
     }
 
     public function __invoke(Request $request):Response{
-        $this->logger->info('HealthCheck called');
+        $this->logger->info('HealthCheck endpoint called');
         return new JsonResponse(
             [
-                'backend-status2' => 'ok'
+                'backend-status' => 'ok'
             ]
         );
 
