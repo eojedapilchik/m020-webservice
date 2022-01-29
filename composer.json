@@ -30,7 +30,6 @@
     },
     "autoload": {
         "psr-4": {
-            "Backend\\": "apps/backend/src/",
             "App\\": "src/"
         }
     },
