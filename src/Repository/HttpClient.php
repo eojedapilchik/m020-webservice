@@ -15,8 +15,12 @@ class HttpClient implements HttpClientInterface
         $this->httpClient = $httpClient;
     }
 
-    public function request(string $method, string $url, array $options = []): ResponseInterface
+    public function request( array $options = []): ResponseInterface
     {
-        return $this->httpClient->request($method, $url, $options);
+        return $this->httpClient->request(
+            'GET',
+            "https://api.punkapi.com/v2/beers",
+            $options
+        );
     }
 }
