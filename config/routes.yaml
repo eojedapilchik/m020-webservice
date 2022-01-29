@@ -5,3 +5,8 @@ health-check_get:
   path: /health-check
   controller:  Backend\Controller\HealthCheckGetController
   methods: [GET]
+
+beer-by-food_get:
+  path: /beer-by-food
+  controller:  Backend\Controller\BeerByFoodGetController
+  methods: [GET]
