@@ -35,8 +35,6 @@ final class BeerListByFoodGetController extends  AbstractFOSRestController
 
         $json =($getBeerByFoodName)($food);
         return View::create($json);
-
-
     }
 
 }
