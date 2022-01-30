@@ -103,7 +103,7 @@ The REST API to the example app is described below.
 ## Installation in local Env.
 
 - Clone this Repository
-- Run composer `composer install` in the folder root
+- Run composer `composer install` in the root folder of the app
 - Run server with the command `symfony server:start` or `php bin/console server:start`
 
 NOTE:  
