@@ -1,8 +1,14 @@
 App\Dto\GetBeerDTO:
   attributes:
     id:
-      groups: ['beer_list_response']
+      groups: ['beer_list_response','beer_details']
     name:
-      groups: ['beer_list_response']
+      groups: ['beer_list_response','beer_details']
     description:
-      groups: ['beer_list_response']
+      groups: ['beer_list_response','beer_details']
+    tagline:
+      groups: ['beer_details']
+    image_url:
+      groups: ['beer_details']
+    first_brewed:
+      groups: ['beer_details']
