@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Dto\GetBeerDetailsDTO;
 use App\Dto\GetBeerDTO;
 use App\Repository\HttpClientInterface;
+use Exception;
 
 class GetBeerDetails
 {
@@ -18,7 +19,6 @@ class GetBeerDetails
     public function __invoke(string $id)
     {
         $response = $this->httpClient->request("GET", "/$id", []);
-
 
         $statusCode = $response->getStatusCode();
 
