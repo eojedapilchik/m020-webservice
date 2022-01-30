@@ -7,6 +7,7 @@ class GetBeerDetailsDTO extends GetBeerDTO
     private $tagline;
     private $image_url;
     private $first_brewed;
+    private $image_64encoded;
 
     public function __construct(
         string $id,
@@ -21,6 +22,11 @@ class GetBeerDetailsDTO extends GetBeerDTO
       $this->tagline = $tagline;
       $this->image_url = $image_url;
       $this->first_brewed = $first_brewed;
+      try {
+          $this->image_64encoded = base64_encode(file_get_contents($this->image_url));
+      } catch (Exception $e){
+          $this->image_64encoded = "";
+      }
       parent::__construct($id, $name, $description);
     }
 
@@ -51,9 +57,9 @@ class GetBeerDetailsDTO extends GetBeerDTO
     /**
      * @return string
      */
-    public function getPhotoEncoded()
+    public function getImage64encoded(): string
     {
-        return base64_encode(file_get_contents($this->imag_url));
+        return $this->image_64encoded;
     }
 
 

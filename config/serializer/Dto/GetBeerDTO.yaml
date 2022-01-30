@@ -12,5 +12,5 @@ App\Dto\GetBeerDTO:
       groups: ['beer_details']
     first_brewed:
       groups: ['beer_details']
-    image_64encoed:
+    image_64encoded:
       groups: ['beer_details']
