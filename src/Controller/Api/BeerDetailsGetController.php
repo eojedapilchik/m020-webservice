@@ -31,7 +31,7 @@ final class BeerDetailsGetController extends  AbstractController
         return new JsonResponse(
             [
                 'beer-details' => 'ok',
-                'food' => $food
+                'food' => $id
             ]
         );
 
