@@ -12,7 +12,7 @@ use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\View\View;
 
-final class BeerDetailsGetController extends  AbstractController
+final class BeerDetailsGetController extends  AbstractFOSRestController
 {
     private $logger;
 

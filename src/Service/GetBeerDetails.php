@@ -23,12 +23,12 @@ class GetBeerDetails
         $statusCode = $response->getStatusCode();
 
         if ($statusCode !== 200) {
-            throw new Exception('Error getting beer');
+            throw new Exception('Error getting beer not a valid ID or ID not found');
         }
 
         $content = $response->getContent();
         $json = json_decode($content, true)[0];
-        //return $json;
+
         return new GetBeerDetailsDTO(
             $json['id'],
             $json['name'],
