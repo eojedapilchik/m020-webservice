@@ -6,9 +6,7 @@ namespace App\Entity;
 class Beer
 {
     private $name;
-
     private $id;
-
     private $food;
 
     /**
