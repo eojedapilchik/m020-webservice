@@ -27,11 +27,15 @@ class GetBeerDetails
         }
 
         $content = $response->getContent();
-        $json = json_decode($content, true);
+        $json = json_decode($content, true)[0];
+        //return $json;
         return new GetBeerDetailsDTO(
-            $json['title'],
-            $json['number_of_pages'],
-            $json['publish_date']
+            $json['id'],
+            $json['name'],
+            $json['description'],
+            $json['tagline'],
+            $json['image_url'],
+            $json['first_brewed']
         );
 
     }

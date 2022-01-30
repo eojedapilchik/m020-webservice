@@ -5,7 +5,7 @@ namespace App\Dto;
 class GetBeerDetailsDTO extends GetBeerDTO
 {
     private $tagline;
-    private $imag_url;
+    private $image_url;
     private $first_brewed;
 
     public function __construct(
@@ -19,7 +19,7 @@ class GetBeerDetailsDTO extends GetBeerDTO
     )
     {
       $this->tagline = $tagline;
-      $this->imag_url = $image_url;
+      $this->image_url = $image_url;
       $this->first_brewed = $first_brewed;
       parent::__construct($id, $name, $description);
     }
@@ -35,9 +35,9 @@ class GetBeerDetailsDTO extends GetBeerDTO
     /**
      * @return string
      */
-    public function getImagUrl(): string
+    public function getImageUrl(): string
     {
-        return $this->imag_url;
+        return $this->image_url;
     }
 
     /**
@@ -51,7 +51,7 @@ class GetBeerDetailsDTO extends GetBeerDTO
     /**
      * @return string
      */
-    public function getPhotoEncoded(): string
+    public function getPhotoEncoded()
     {
         return base64_encode(file_get_contents($this->imag_url));
     }

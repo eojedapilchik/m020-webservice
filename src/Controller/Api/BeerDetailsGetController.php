@@ -2,6 +2,7 @@
 
 namespace App\Controller\Api;
 
+use App\Service\GetBeerDetails;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -26,14 +27,22 @@ final class BeerDetailsGetController extends  AbstractController
      * @Rest\Get(path="/beers/{id}")
      * @Rest\View(serializerGroups={"beer_details"}, serializerEnableMaxDepthChecks=true)
      */
-    public function show(Request $request, string $id):Response{
+    public function show(Request $request, string $id, GetBeerDetails $getBeerDetails)
+    {
         $this->logger->info(sprintf('BeerById Called with %s', $id));
-        return new JsonResponse(
-            [
-                'beer-details' => 'ok',
-                'food' => $id
-            ]
-        );
+//        return new JsonResponse(
+//            [
+//                'beer-details' => 'ok',
+//                'food' => $id
+//            ]
+//        );
+
+        if (empty($id)) {
+            return View::create('Id of Beer cannot be empty', Response::HTTP_BAD_REQUEST);
+        }
+
+        $json =($getBeerDetails)($id);
+        return View::create($json);
 
     }
 
