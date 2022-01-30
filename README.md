@@ -104,7 +104,7 @@ The REST API to the example app is described below.
 
 - Clone this Repository
 - Run composer `composer install` in the folder root
-- Run server with the command `symfony server:start`
+- Run server with the command `symfony server:start` or `php bin/console server:start`
 
 NOTE:  
 If you require that the picture of the Beer is retrieved 64encoded, then uncomment:  
