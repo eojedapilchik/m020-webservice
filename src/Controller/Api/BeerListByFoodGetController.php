@@ -27,24 +27,15 @@ final class BeerListByFoodGetController extends  AbstractFOSRestController
     public function list(Request $request, GetBeerByFoodName $getBeerByFoodName)
     {
         $food = $request->get('food', null);
-        $response = new JsonResponse();
         $this->logger->info(sprintf('BeerByFood Called with %s', $food));
+
         if (empty($food)) {
-            $response->setData([
-                'success' => false,
-                'error' => 'Food cannot beempty',
-                'data' => null
-            ]);
             return View::create('Food name cannot be empty', Response::HTTP_BAD_REQUEST);
-        } else {
-            $response->setData([
-                    'beer-details' => 'ok',
-                    'food' => $food
-            ]);
-            $json =($getBeerByFoodName)($food);
-            return View::create($json);
         }
-        return $response;
+
+        $json =($getBeerByFoodName)($food);
+        return View::create($json);
+
 
     }
 

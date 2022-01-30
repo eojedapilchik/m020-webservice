@@ -2,10 +2,11 @@
 
 namespace App\Service;
 
+use App\Dto\GetBeerDetailsDTO;
 use App\Dto\GetBeerDTO;
 use App\Repository\HttpClientInterface;
 
-class GetBeerByFoodName
+class GetBeerDetails
 {
     private $httpClient;
 
@@ -14,17 +15,10 @@ class GetBeerByFoodName
         $this->httpClient = $httpClient;
     }
 
-    public function __invoke(string $food)
+    public function __invoke(string $id)
     {
-        $response = $this->httpClient->request(
-            "GET",
-            "",
-            [
-                'query' => [
-                    'food' => $food
-                ]
-            ]
-        );
+        $response = $this->httpClient->request("GET", "/$id", []);
+
 
         $statusCode = $response->getStatusCode();
 
@@ -34,8 +28,13 @@ class GetBeerByFoodName
 
         $content = $response->getContent();
         $json = json_decode($content, true);
-        return $json;
-        //return json_decode($content, true);
+        return new GetBeerDetailsDTO(
+            $json['title'],
+            $json['number_of_pages'],
+            $json['publish_date']
+        );
 
     }
+
+
 }

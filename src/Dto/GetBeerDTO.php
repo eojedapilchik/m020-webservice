@@ -4,7 +4,8 @@ namespace App\Dto;
 
 class GetBeerDTO
 {
-    private $name;private $id;
+    private $id;
+    private $name;
     private $description;
 
     public function __construct(
