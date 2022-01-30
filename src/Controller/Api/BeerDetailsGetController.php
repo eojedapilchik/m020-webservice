@@ -30,12 +30,6 @@ final class BeerDetailsGetController extends  AbstractController
     public function show(Request $request, string $id, GetBeerDetails $getBeerDetails)
     {
         $this->logger->info(sprintf('BeerById Called with %s', $id));
-//        return new JsonResponse(
-//            [
-//                'beer-details' => 'ok',
-//                'food' => $id
-//            ]
-//        );
 
         if (empty($id)) {
             return View::create('Id of Beer cannot be empty', Response::HTTP_BAD_REQUEST);
